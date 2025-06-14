@@ -1,5 +1,5 @@
 import os
-import gradio as gr  # Ensure this import is here
+import gradio as gr
 from dotenv import load_dotenv
 from ipcc_colab_agent import IPCCLLMAgent, create_interface
 
