@@ -1,23 +1,29 @@
 import os
+from dotenv import load_dotenv
 import gradio as gr
-import time
 from ipcc_colab_agent import IPCCLLMAgent, create_interface
+
+# Load environment variables first
+load_dotenv()
+
+print("🌍 Starting IPCC Climate Bot...")
+print("📚 Loading IPCC knowledge base...")
+print("🔧 Setting up model configurations...")
 
 # Initialize the agent
 agent = IPCCLLMAgent()
 
-# Create Gradio interface
+# Create and launch interface
 interface = create_interface()
 
-if __name__ == "__main__":
-    # Mobile-friendly launch settings
-    interface.launch(
-        server_name="0.0.0.0",
-        server_port=8080,
-        share=False,
-        favicon_path="favicon.ico",
-        inbrowser=False
-    )
-    # Keep the app running
-    while True:
-        time.sleep(600)
+print("🚀 Launching interface...")
+print("💡 Tip: Use 'Mock AI' model for demo mode, or configure API keys for full functionality")
+
+# Launch the interface
+interface.launch(
+    server_name="0.0.0.0",
+    server_port=8080,
+    share=False,
+    show_error=True,
+    quiet=False
+)
