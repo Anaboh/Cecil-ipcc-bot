@@ -1,6 +1,6 @@
 import os
+import gradio as gr  # Ensure this import is here
 from dotenv import load_dotenv
-import gradio as gr
 from ipcc_colab_agent import IPCCLLMAgent, create_interface
 
 # Load environment variables first
