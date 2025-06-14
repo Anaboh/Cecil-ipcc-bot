@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ipcc-bot
+    env: python
+    region: ohio # or choose closest to you
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        value: your_openai_key
+      - key: ANTHROPIC_API_KEY
+        value: your_anthropic_key
+      - key: GEMINI_API_KEY
+        value: your_gemini_key
